@@ -6,7 +6,7 @@ let iterations = 0;
 const run = async () => {
   iterations++;
   const browser = await chromium.launch({
-    headless: false, // Set to false if you want to see the browser
+    headless: true, // Set to false if you want to see the browser
   });
   const context = await browser.newContext();
   const page = await context.newPage();
@@ -55,7 +55,6 @@ const run = async () => {
 
   await browser.close();
 
-  console.log('Logged in successfully!');
 }
 
 const main = async () => {
