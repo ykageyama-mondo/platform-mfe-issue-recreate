@@ -19,6 +19,8 @@ const run = async () => {
     }
 
     if (msg.text().includes('Minified React error')) {
+      console.log('x')
+
       console.error(`Error in iteration ${iterations}. Failed at step ${step}:\n`, msg.text());
       process.exit(1);
     }
@@ -55,9 +57,13 @@ const run = async () => {
 
   await browser.close();
 
+  process.stdout.write('.')
+
 }
 
 const main = async () => {
+
+  console.log('Starting script')
 
   while(true) {
     await run()
